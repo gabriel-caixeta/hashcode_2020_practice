@@ -53,7 +53,7 @@ class PizzaSlices():
 
     def get_min(self,items,sum):
         self.counter += 1
-        print(items, self.M - sum)
+        # print(items, self.M - sum)
         if self.M - sum < self.min_diff[1] and self.M >= sum:
             self.min_diff = [items, self.M - sum]
         elif self.M < sum and self.skip_flag:
