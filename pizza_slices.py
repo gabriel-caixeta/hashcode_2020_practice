@@ -4,7 +4,7 @@ from math import ceil
 SKIP = False
 
 class PizzaSlices():
-    def __init__(self,input_file,skip):
+    def __init__(self,input_file):
         f_in = open(input_file, 'r')
         f_lines = f_in.readlines()
 
@@ -14,7 +14,7 @@ class PizzaSlices():
         self.M, self.N, self.S = int(M),int(N),S
         self.min_diff=[[], self.M]
         self.skip = []
-        self.skip_flag = skip
+        self.skip_flag = True
         self.counter = 0
         self.n = -1
         self.previous_diff = M
@@ -68,9 +68,8 @@ class PizzaSlices():
 if __name__ == '__main__':
     input_file = 'input/c_medium.in'
     # input_file = 'input/c_medium.in'
-    SKIP = True
 
-    pizza_slices = PizzaSlices(input_file, SKIP)
+    pizza_slices = PizzaSlices(input_file)
     pizza_slices.get_slices()
 
     print('number of calls:', pizza_slices.counter)
